@@ -4,9 +4,10 @@ class Rover {
       this.mode = mode;
       this.generatorWatts = generatorWatts;
    }
-   receiveMessage(messageName){
+   receiveMessage(inMessage){
       let message = {
-         name: messageName
+         name: inMessage.name,
+         commandsArray: inMessage.commandsArray
       }
       return message;
    }

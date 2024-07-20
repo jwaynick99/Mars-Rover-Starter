@@ -13,8 +13,13 @@ describe("Rover class", function() {
   });
   it("response returned by receiveMessage contains the name of the message", function(){
     let newRover = new Rover();
-    let newName = newRover.receiveMessage("Message");
+    let newName = newRover.receiveMessage(new Message("Message"));
     expect(newName).toEqual({"name": "Message"});
   });
+  it("response returned by receiveMessage includes two results if two commands are sent in the message", function(){
+    let newRover = new Rover();
+    let newMessage = new Message("Name", ["Command 1", "Command 2"])
+    expect(newRover.receiveMessage(newMessage).commandsArray.length).toEqual(2)
+  })
 
 });
