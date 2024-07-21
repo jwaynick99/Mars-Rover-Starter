@@ -15,6 +15,6 @@ describe("Command class", function() {
   it("constructor sets a value passed in as the second argument", function(){
     let newCommand = new Command("Command Type", 10);
     expect(newCommand.value).toEqual(10)
-  })
+  });
 
 });
